@@ -1,0 +1,845 @@
+<?xml version="1.0"?>
+<!--DG Flugzeugbau DG1001-->
+<!--2016 D-ECHO-->
+<!--based on-->
+<!-- Schleicher ASK 13 Glider  -->
+<!-- Copyright 2010 Patrice Poly -->
+
+<PropertyList>
+
+ <path>dg1001.ac</path>
+
+ <offsets>
+   <x-m>0.</x-m>
+   <y-m>0.</y-m>
+   <z-m>0.</z-m>
+   <pitch-deg>0.0</pitch-deg>
+ </offsets>
+
+<!-- <model>
+	 <path>Aircraft/ASK13/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+	 <offsets>
+		 <x-m>0.707</x-m>
+		 <y-m> 0.093</y-m>
+		 <z-m>0.334</z-m>
+		 <pitch-deg>-20</pitch-deg>
+	 </offsets>	 
+ </model>
+ 
+  <model>
+	 <path>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.xml</path>
+	 <offsets>
+		 <x-m>0.741</x-m>
+		 <y-m>0.093</y-m>
+		 <z-m>0.238</z-m>
+		 <pitch-deg>-20</pitch-deg>
+	 </offsets>	 
+ </model>
+ -->
+ <!--Front panel, is not exactly as real, but there are many instruments in RL not present in flightgear-->
+  <model>
+	 <path>Aircraft/ASK13/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+	 <offsets>
+		 <x-m>-3.31246</x-m>
+		 <y-m>0.0</y-m>
+		 <z-m>-0.55172</z-m>
+		 <pitch-deg>-8</pitch-deg>
+	 </offsets>	 
+ </model>
+  <model>
+	 <path>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.xml</path>
+	 <offsets>
+		 <x-m>-3.30047</x-m>
+		 <y-m>0</y-m>
+		 <z-m>-0.63607</z-m>
+		 <pitch-deg>-8</pitch-deg>
+	 </offsets>	 
+ </model>
+ 
+  <model>
+	 <path>Aircraft/ASK13/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
+	 <offsets>
+		 <x-m>-3.30047</x-m>
+		 <y-m>-0.08651</y-m>
+		 <z-m>-0.63607</z-m>
+		 <pitch-deg>-8</pitch-deg>
+	 </offsets>	 
+ </model>
+   <model>
+	 <path>Aircraft/Instruments-3d/winter-alti-4110/winter-4110.xml</path>
+	 <offsets>
+		 <x-m>-3.30047</x-m>
+		 <y-m>0.08651</y-m>
+		 <z-m>-0.63607</z-m>
+		 <pitch-deg>-8</pitch-deg>
+	 </offsets>	 
+ </model>
+ <!--Rear panel-->
+  <model>
+	 <path>Aircraft/ASK13/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
+	 <offsets>
+		 <x-m>-2.42902</x-m>
+		 <y-m>-0.08647</y-m>
+		 <z-m>-0.55492</z-m>
+		 <pitch-deg>-8</pitch-deg>
+	 </offsets>	 
+ </model>
+   <model>
+	 <path>Aircraft/Instruments-3d/winter-alti-4110/winter-4110.xml</path>
+	 <offsets>
+		 <x-m>-2.42902</x-m>
+		 <y-m>0.08647</y-m>
+		 <z-m>-0.55492</z-m>
+		 <pitch-deg>-8</pitch-deg>
+	 </offsets>	 
+ </model>
+  <model>
+	 <path>Aircraft/ASK13/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+	 <offsets>
+		 <x-m>-2.43642</x-m>
+		 <y-m>-0.03471</y-m>
+		 <z-m>-0.49497</z-m>
+		 <pitch-deg>-8</pitch-deg>
+	 </offsets>	 
+ </model>
+  <model>
+	 <path>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.xml</path>
+	 <offsets>
+		 <x-m>-2.43642</x-m>
+		 <y-m>0.03471</y-m>
+		 <z-m>-0.49497</z-m>
+		 <pitch-deg>-8</pitch-deg>
+	 </offsets>	 
+ </model>
+ 
+ <!--
+   <model>
+	 <path>Aircraft/ASK13/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
+	 <offsets>
+		 <x-m>1.782</x-m>
+		 <y-m>0.00</y-m>
+		 <z-m>0.426</z-m>
+		 <pitch-deg>-10</pitch-deg>
+	 </offsets>	 
+ </model>
+ 
+   <model>
+	 <path>Aircraft/Instruments-3d/comp/comp.xml</path>
+	 <offsets>
+		 <x-m>0.684</x-m>
+		 <y-m> 0</y-m>
+		 <z-m>0.324</z-m>
+		 <scale>1.2</scale>
+		 <pitch-deg>-15</pitch-deg>
+	 </offsets>	 
+ </model>
+ 
+   <model>
+	 <path>Aircraft/Instruments-3d/comp/comp.xml</path>
+	 <offsets>
+		 <x-m>1.783</x-m>
+		 <y-m> -0.110</y-m>
+		 <z-m>0.3</z-m>
+		 <scale>1.2</scale>
+		 <pitch-deg>-15</pitch-deg>
+	 </offsets>	 
+ </model>
+
+  <model>
+	 <path>Aircraft/ASK13/Models/instruments/wool-thread/wool-thread.xml</path>
+	 <offsets>
+		 <x-m>0.786</x-m>
+		 <y-m> 0</y-m>
+		 <z-m>0.591</z-m>
+		 <pitch-deg>0</pitch-deg>
+	 </offsets>	 
+ </model>
+ 
+   <model>
+	 <path>Aircraft/Instruments-3d/winter-ball/ball.xml</path>
+	 <offsets>
+		 <x-m>0.732</x-m>
+		 <y-m> 0</y-m>
+		 <z-m>0.264</z-m>
+		 <pitch-deg>-20</pitch-deg>
+	 </offsets>	 
+ </model>
+ 
+    <model>
+	 <path>Aircraft/Instruments-3d/winter-ball/ball.xml</path>
+	 <offsets>
+		 <x-m>1.803</x-m>
+		 <y-m> 0</y-m>
+		 <z-m>0.311</z-m>
+		 <pitch-deg>-10</pitch-deg>
+	 </offsets>	 
+ </model>
+ 
+  <model>
+	 <path>Aircraft/Instruments-3d/ar-3201/ar-3201.xml</path>
+	 <offsets>
+		 <x-m>0.758</x-m>
+		 <y-m> 0</y-m>
+		 <z-m>0.190</z-m>
+		 <pitch-deg>-20</pitch-deg>
+	 </offsets>	 
+ </model>
+ 
+ 
+    <model>
+	 <path>Aircraft/Instruments-3d/winter-alti-4110/winter-4110.xml</path>
+	 <offsets>
+		 <x-m>1.786</x-m>
+		 <y-m> 0.110</y-m>
+		 <z-m>0.407</z-m>
+		 <pitch-deg>-10</pitch-deg>
+	 </offsets>	 
+ </model>-->
+ 
+ <!--Gear retraction-->
+ <animation>
+   <type>rotate</type>
+   <object-name>wheel</object-name>
+   <object-name>gear1</object-name>
+   <object-name>gear2</object-name>
+   <object-name>gear4</object-name>
+   <property>gear/gear/position-norm</property>
+   <interpolation>
+     <entry>
+       <ind>1.0</ind>
+       <dep>0</dep>
+     </entry>
+     <entry>
+       <ind>0.1</ind>
+       <dep>-125</dep>
+     </entry>
+     <entry>
+       <ind>0</ind>
+       <dep>-125</dep>
+     </entry>
+      </interpolation>
+		<center>
+			<x-m>-1.52345</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.97144</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+ <animation>
+   <type>rotate</type>
+   <object-name>gear3</object-name>
+   <property>gear/gear/position-norm</property>
+   <interpolation>
+     <entry>
+       <ind>1.0</ind>
+       <dep>0</dep>
+     </entry>
+     <entry>
+       <ind>0.1</ind>
+       <dep>70</dep>
+     </entry>
+     <entry>
+       <ind>0</ind>
+       <dep>70</dep>
+     </entry>
+      </interpolation>
+		<center>
+			<x-m>-1.26217</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.96166</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+ 
+ <!--Gear Doors-->
+ <animation>
+   <type>rotate</type>
+   <object-name>geardoorL</object-name>
+   <property>gear/gear/position-norm</property>
+   <interpolation>
+     <entry>
+       <ind>1.0</ind>
+       <dep>-90</dep>
+     </entry>
+     <entry>
+       <ind>0.1</ind>
+       <dep>-90</dep>
+     </entry>
+     <entry>
+       <ind>0</ind>
+       <dep>0</dep>
+     </entry>
+      </interpolation>
+    <axis>
+      <x1-m> -1.6003 </x1-m>
+      <y1-m> -0.11872 </y1-m>
+      <z1-m> -1.06491 </z1-m>
+      <x2-m>-1.11742 </x2-m>
+      <y2-m> -0.11872 </y2-m>
+      <z2-m> -1.02161 </z2-m>
+    </axis>
+ </animation>
+ <animation>
+   <type>rotate</type>
+   <object-name>geardoorR</object-name>
+   <property>gear/gear/position-norm</property>
+   <interpolation>
+     <entry>
+       <ind>1.0</ind>
+       <dep>90</dep>
+     </entry>
+     <entry>
+       <ind>0.1</ind>
+       <dep>90</dep>
+     </entry>
+     <entry>
+       <ind>0</ind>
+       <dep>0</dep>
+     </entry>
+      </interpolation>
+    <axis>
+      <x1-m> -1.6003 </x1-m>
+      <y1-m> 0.11872 </y1-m>
+      <z1-m> -1.06491 </z1-m>
+      <x2-m>-1.11742 </x2-m>
+      <y2-m> 0.11872 </y2-m>
+      <z2-m> -1.02161 </z2-m>
+    </axis>
+ </animation>
+ 
+ 
+   <!--<model>
+    <path>Aircraft/ASK13/Models/Immat/immat.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>-->
+ 
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>canopy.front</object-name>
+    <object-name>canopy.rear</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Effects/glass</inherits-from>
+    <object-name>canopy.front.int</object-name>
+    <object-name>canopy.rear.int</object-name>
+  </effect>
+ <!-- <effect>
+    <inherits-from>Models/Effects/ask13_bumpspec</inherits-from>
+    <object-name>wing</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Models/Effects/ask13_bumpspec-2</inherits-from>
+    <object-name>left-aileron</object-name>
+    <object-name>right-aileron</object-name>
+    <object-name>rudder</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Models/Effects/ask13_model</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>hstab</object-name>
+  </effect>-->
+    
+   <animation>
+   <type>rotate</type>
+   <object-name>front-airbrakes-handle</object-name>
+   <property>surface-positions/speedbrake-pos-norm</property>
+   <interpolation>
+     <entry>
+       <ind>1.0</ind>
+       <dep>45</dep>
+     </entry>
+     <entry>
+       <ind>0.02</ind>
+       <dep>5.0</dep>
+     </entry>
+     <entry>
+       <ind>0</ind>
+       <dep>0</dep>
+     </entry>
+      </interpolation>
+		<center>
+			<x-m>0.895516</x-m>
+			<y-m>-0.234871</y-m>
+			<z-m>-0.058508</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0.006534</y>
+			<z>0</z>
+		</axis>
+ </animation>
+ 
+    <animation>
+   <type>rotate</type>
+   <object-name>rear-airbrakes-handle</object-name>
+   <property>surface-positions/speedbrake-pos-norm</property>
+   <interpolation>
+     <entry>
+       <ind>1.0</ind>
+       <dep>45</dep>
+     </entry>
+     <entry>
+       <ind>0.02</ind>
+       <dep>5.0</dep>
+     </entry>
+     <entry>
+       <ind>0</ind>
+       <dep>0</dep>
+     </entry>
+      </interpolation>
+		<center>
+			<x-m>2.040646</x-m>
+			<y-m>-0.234871</y-m>
+			<z-m>0.123722</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0.006534</y>
+			<z>0</z>
+		</axis>
+ </animation>
+
+    <animation>
+   <type>rotate</type>
+   <object-name>left-top-airbrake</object-name>
+   <property>surface-positions/speedbrake-pos-norm</property>
+   <interpolation>
+     <entry>
+       <ind>0</ind>
+       <dep>0</dep>
+     </entry>
+     <entry>
+       <ind>0.02</ind>
+       <dep>7</dep>
+     </entry>
+     <entry>
+       <ind>1.0</ind>
+       <dep>65</dep>
+     </entry>
+      </interpolation>
+		<center>
+			<x-m>2.480349</x-m>
+			<y-m>-2.693422</y-m>
+			<z-m>0.597342</z-m>
+		</center>
+		<axis>
+			<x>-0.01878</x>
+			<y>0.002464</y>
+			<z>0</z>
+		</axis>
+ </animation>
+ 
+     <animation>
+   <type>rotate</type>
+   <object-name>left-bottom-airbrake</object-name>
+   <property>surface-positions/speedbrake-pos-norm</property>
+   <interpolation>
+     <entry>
+       <ind>0</ind>
+       <dep>0</dep>
+     </entry>
+     <entry>
+       <ind>0.02</ind>
+       <dep>7</dep>
+     </entry>
+     <entry>
+       <ind>1.0</ind>
+       <dep>65</dep>
+     </entry>
+      </interpolation>
+		<center>
+			<x-m>2.409528</x-m>
+			<y-m>-3.233188</y-m>
+			<z-m>0.647128</z-m>
+		</center>
+		<axis>
+			<x>-0.01878</x>
+			<y>0.002464</y>
+			<z>0</z>
+		</axis>
+ </animation>
+ 
+     <animation>
+   <type>rotate</type>
+   <object-name>right-top-airbrake</object-name>
+   <property>surface-positions/speedbrake-pos-norm</property>
+   <interpolation>
+     <entry>
+       <ind>0</ind>
+       <dep>0</dep>
+     </entry>
+     <entry>
+       <ind>0.02</ind>
+       <dep>7</dep>
+     </entry>
+     <entry>
+       <ind>1.0</ind>
+       <dep>65</dep>
+     </entry>
+      </interpolation>
+		<center>
+			<x-m>2.480349</x-m>
+			<y-m>2.693422</y-m>
+			<z-m>0.597343</z-m>
+		</center>
+		<axis>
+			<x>0.01878</x>
+			<y>0.002464</y>
+			<z>0</z>
+		</axis>
+ </animation>
+ 
+      <animation>
+   <type>rotate</type>
+   <object-name>right-bottom-airbrake</object-name>
+   <property>surface-positions/speedbrake-pos-norm</property>
+   <interpolation>
+     <entry>
+       <ind>0</ind>
+       <dep>0</dep>
+     </entry>
+     <entry>
+       <ind>0.02</ind>
+       <dep>7</dep>
+     </entry>
+     <entry>
+       <ind>1.0</ind>
+       <dep>65</dep>
+     </entry>
+      </interpolation>
+		<center>
+			<x-m>2.409528</x-m>
+			<y-m>3.233188</y-m>
+			<z-m>0.647128</z-m>
+		</center>
+		<axis>
+			<x>0.01878</x>
+			<y>0.002464</y>
+			<z>0</z>
+		</axis>
+ </animation>
+ 
+ 	<animation>
+		<type>rotate</type>
+		<object-name>aileronLI</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<min-deg>-20</min-deg>
+		<max-deg>20</max-deg>
+		<factor>-20</factor>
+    <axis>
+      <x1-m> -0.99585 </x1-m>
+      <y1-m> -4.69572 </y1-m>
+      <z1-m> -0.40708 </z1-m>
+      <x2-m>-1.18901 </x2-m>
+      <y2-m> -8.62643 </y2-m>
+      <z2-m> -0.24722 </z2-m>
+    </axis>
+	</animation>
+ 	<animation>
+		<type>rotate</type>
+		<object-name>aileronLO</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<min-deg>-20</min-deg>
+		<max-deg>20</max-deg>
+		<factor>-20</factor>
+    <axis>
+      <x1-m>-1.18901 </x1-m>
+      <y1-m> -8.62643 </y1-m>
+      <z1-m> -0.24722 </z1-m>
+      <x2-m>-1.22267 </x2-m>
+      <y2-m> -9.31014 </y2-m>
+      <z2-m> -0.07935 </z2-m>
+    </axis>
+	</animation>
+	
+ 	<animation>
+		<type>rotate</type>
+		<object-name>aileronRI</object-name>
+		<property>surface-positions/right-aileron-pos-norm</property>
+		<min-deg>-20</min-deg>
+		<max-deg>20</max-deg>
+		<factor>20</factor>
+    <axis>
+      <x1-m> -0.99585 </x1-m>
+      <y1-m> 4.69572 </y1-m>
+      <z1-m> -0.40708 </z1-m>
+      <x2-m>-1.18901 </x2-m>
+      <y2-m> 8.62643 </y2-m>
+      <z2-m> -0.24722 </z2-m>
+    </axis>
+	</animation>
+ 	<animation>
+		<type>rotate</type>
+		<object-name>aileronRO</object-name>
+		<property>surface-positions/right-aileron-pos-norm</property>
+		<min-deg>-20</min-deg>
+		<max-deg>20</max-deg>
+		<factor>20</factor>
+    <axis>
+      <x1-m>-1.18901 </x1-m>
+      <y1-m> 8.62643 </y1-m>
+      <z1-m> -0.24722 </z1-m>
+      <x2-m>-1.22267 </x2-m>
+      <y2-m> 9.31014 </y2-m>
+      <z2-m> -0.07935 </z2-m>
+    </axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>elevator</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<min-deg>-20</min-deg>
+		<max-deg>20</max-deg>
+		<factor>-20</factor>
+		<center>
+			<x-m>3.97943</x-m>
+			<y-m>0</y-m>
+			<z-m>0.93291</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<min-deg>-20</min-deg>
+		<max-deg>20</max-deg>
+		<factor>20</factor>
+    <axis>
+      <x1-m> 3.91592 </x1-m>
+      <y1-m> 0.000 </y1-m>
+      <z1-m> -0.61008 </z1-m>
+      <x2-m> 4.01137 </x2-m>
+      <y2-m> 0.000 </y2-m>
+      <z2-m> 0.9246 </z2-m>
+    </axis>
+	</animation>
+ 
+  
+ 	<animation>
+		<type>rotate</type>
+		<object-name>front-yoke</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<min-deg>-20</min-deg>
+		<max-deg>20</max-deg>
+		<factor>20</factor>
+		<center>
+			<x-m>0.884265</x-m>
+			<y-m>-0.000313</y-m>
+			<z-m>-0.237486</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-0.020925</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+
+ 	<animation>
+		<type>rotate</type>
+		<object-name>front-yoke</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<min-deg>-25</min-deg>
+		<max-deg>25</max-deg>
+		<factor>-25</factor>
+		<center>
+			<x-m>0.884265</x-m>
+			<y-m>-0.000313</y-m>
+			<z-m>-0.237486</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>back-yoke</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<min-deg>-20</min-deg>
+		<max-deg>20</max-deg>
+		<factor>20</factor>
+		<center>
+			<x-m>1.899079</x-m>
+			<y-m>-0.000313</y-m>
+			<z-m>-0.125763</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-0.020925</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+
+ 	<animation>
+		<type>rotate</type>
+		<object-name>back-yoke</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<min-deg>-20</min-deg>
+		<max-deg>20</max-deg>
+		<factor>-20</factor>
+		<center>
+			<x-m>1.839929</x-m>
+			<y-m>-0.000313</y-m>
+			<z-m>-0.125763</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+ 	 <animation>
+		<type>rotate</type>
+		<object-name>front-trim-handl</object-name>
+		<property>controls/flight/spoilers</property>
+		<min-deg>-50</min-deg>
+		<max-deg>50</max-deg>
+		<factor>-100</factor>
+		<center>
+ 			<x-m>0.947587</x-m>
+			<y-m>0.257991</y-m>
+			<z-m>0.122396</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0.003923</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>rear-trim-handl</object-name>
+		<property>controls/flight/spoilers</property>
+		<min-deg>-50</min-deg>
+		<max-deg>50</max-deg>
+		<factor>-100</factor>
+		<center>
+			<x-m>2.039331</x-m>
+			<y-m>0.257991</y-m>
+			<z-m>0.302744</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0.003923</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>spoilers</object-name>
+		<property>surface-positions/speedbrake-pos-norm</property>
+		<factor>.1</factor>
+		<axis>
+			<x>0</x>
+			<y>0.0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+ <animation>
+  <type>rotate</type>
+  <object-name>front-left-pedal_</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<min-deg>-25</min-deg>
+		<max-deg>25</max-deg>
+		<factor>25</factor>
+		<center>
+			<x-m>0.390158</x-m>
+			<y-m>-0.103514</y-m>
+			<z-m>0.034231</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+ </animation>	
+ 
+  <animation>
+  <type>rotate</type>
+  <object-name>front-right-pedal_</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<min-deg>-25</min-deg>
+		<max-deg>25</max-deg>
+		<factor>-25</factor>
+		<center>
+			<x-m>0.390246</x-m>
+			<y-m>0.103461</y-m>
+			<z-m>0.033928</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+ 
+  <animation>
+  <type>rotate</type>
+  <object-name>rear-left-pedal_</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<min-deg>-25</min-deg>
+		<max-deg>25</max-deg>
+		<factor>-25</factor>
+
+		<center>
+			<x-m>1.45867</x-m>
+			<y-m>-0.22577</y-m>
+			<z-m>-0.104397</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+ 
+   <animation>
+  <type>rotate</type>
+  <object-name>rear-right-pedal_</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<min-deg>-25</min-deg>
+		<max-deg>25</max-deg>
+		<factor>25</factor>
+
+		<center>
+			<x-m>1.45867</x-m>
+			<y-m>0.22577</y-m>
+			<z-m>-0.104397</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+	
+ </PropertyList>
