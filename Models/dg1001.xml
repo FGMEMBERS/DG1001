@@ -565,6 +565,34 @@
       <z2-m> -0.07935 </z2-m>
     </axis>
 	</animation>
+        
+ 	<animation>
+		<type>select</type>
+		<object-name>helipingperson</object-name>
+		<object-name>arm.up</object-name>
+		<object-name>arm.down</object-name>
+                <condition>
+                    <property>/controls/gear/assist</property>
+            </condition>
+	</animation>
+ 	<animation>
+		<type>select</type>
+		<object-name>arm.up</object-name>
+                <condition>
+                    <and><not>
+                        <property>sim/hitches/winch/open</property></not>
+                    <property>gear/gear[1]/wow</property></and>
+            </condition>
+	</animation>
+ 	<animation>
+		<type>select</type>
+		<object-name>arm.down</object-name>
+                <condition>
+                    <or>
+                        <property>sim/hitches/winch/open</property>
+                        <not><property>gear/gear[1]/wow</property></not></or>
+            </condition>
+	</animation>
 	
  	<animation>
 		<type>rotate</type>

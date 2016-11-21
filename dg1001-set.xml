@@ -35,7 +35,7 @@ copyright 2010 Patrice Poly
 		</sound>
   
   <help>
-   <title>ASK 13</title>
+   <title>DG 1001G</title>
 	<key>
 		<name>Ctrl-w</name>
 		<desc>Place winch 1000m in front of aircraft</desc>
@@ -82,6 +82,10 @@ copyright 2010 Patrice Poly
 5. Keep aircraft level and follow the aircraft until after takeoff..
 6. When at appropriate alitude, press 'O' to disconnect the hook.
 7. Fly!
+
+=== Ground handling ===
+This aircraft has some features to make ground handling easier/possible at all. When pressing "Toggle assiting gears" the aircraft gets levelled around the x-axes as if someone was holding your wing ;) When pressing "Toggle ground handling", two features are enanled to pull the aircraft around on the ground: 1. All rudder inputs are copied to a thruster, as if someone was pulling your wing so the aircraft turns and 2.  all throttle inputs cause your aircraft to taxi, as if someone (or a car) was pulling/pushing it.
+When there is somebody with a followme around, you can connect to it by pressing Ctrl+o (release: Ctrl+shift+o) so he can carry you around the airport or even tow you into the air! (also check the Aerotow Settings therefor).
 </text>
   </help>
 
@@ -103,7 +107,21 @@ copyright 2010 Patrice Poly
      	 <command>nasal</command>
      	 <script>ask13.winch_dialog.open()</script>
        </binding>
+     </item>     
+     <item>
+       <label>Toggle ground handling</label>
+       <binding>
+     	 <command>property-toggle</command>
+         <property>/controls/ground-handling</property>
+       </binding>
      </item>    
+     <item>
+       <label>Toggle assiting gears</label>
+       <binding>
+     	 <command>property-toggle</command>
+         <property>/controls/gear/assist-1</property>
+       </binding>
+     </item> 
     </menu>
    </default>
   </menubar>
@@ -316,6 +334,7 @@ copyright 2010 Patrice Poly
 
 	</sim>
 	<controls>
+            <ground-handling type="bool">false</ground-handling>
 		<flight>
 		  <elevator-trim>0.2195</elevator-trim> <!-- controllable -->
                   <spoilers alias="/controls/flight/elevator-trim"/> <!-- spoilers is transmitted via mp (elevator-trim is NOT) -->
@@ -335,6 +354,20 @@ copyright 2010 Patrice Poly
 
 	<input>
 		<keyboard>
+        <key n="127">
+            <name>Delete</name>
+            <desc>Toggle Reversers</desc>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[0]/reverser</property>
+            </binding>
+        </key>
                       <!--
 			<key n="23">
 			<name>Ctrl-w</name>
@@ -426,10 +459,11 @@ copyright 2010 Patrice Poly
  	<nasal>
 		<ask13>
 			<file>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.nas</file>
-			<file>Aircraft/ASK13/Nasal/wool-thread.nas</file>
-			<file>Aircraft/ASK13/Nasal/AR3201.nas</file>
-			<file>Aircraft/ASK13/Nasal/immat.nas</file>
-			<file>Aircraft/ASK13/Nasal/dialogs.nas</file>
+			<file>Aircraft/DG1001/Nasal/wool-thread.nas</file>
+			<file>Aircraft/DG1001/Nasal/AR3201.nas</file>
+			<file>Aircraft/DG1001/Nasal/immat.nas</file>
+			<file>Aircraft/DG1001/Nasal/dialogs.nas</file>
+			<file>Aircraft/DG1001/Nasal/systems.nas</file>
 		</ask13>
 	</nasal>
   
