@@ -368,11 +368,19 @@
     <object-name>canopy.front.int</object-name>
     <object-name>canopy.rear.int</object-name>
   </effect>
- <!-- <effect>
-    <inherits-from>Models/Effects/ask13_bumpspec</inherits-from>
-    <object-name>wing</object-name>
+  <effect>
+    <inherits-from>Aircraft/DG1001/Models/Effects/interior-shadow</inherits-from>
+    <object-name>interiorF</object-name>
+    <object-name>seatF</object-name>
+    <object-name>panelF</object-name>
   </effect>
-
+  <effect>
+    <inherits-from>Aircraft/DG1001/Models/Effects/interior-shadow-back</inherits-from>
+    <object-name>interiorR</object-name>
+    <object-name>seatR</object-name>
+    <object-name>panelR</object-name>
+  </effect>
+<!--
   <effect>
     <inherits-from>Models/Effects/ask13_bumpspec-2</inherits-from>
     <object-name>left-aileron</object-name>
