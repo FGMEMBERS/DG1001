@@ -17,7 +17,7 @@
  </offsets>
 
 <!-- <model>
-	 <path>Aircraft/ASK13/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+	 <path>Aircraft/DG1001/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
 	 <offsets>
 		 <x-m>0.707</x-m>
 		 <y-m> 0.093</y-m>
@@ -38,26 +38,26 @@
  -->
  <!--Front panel, is not exactly as real, but there are many instruments in RL not present in flightgear-->
   <model>
-	 <path>Aircraft/ASK13/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+	 <path>Aircraft/DG1001/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
 	 <offsets>
-		 <x-m>-3.31246</x-m>
+		 <x-m>-3.31</x-m>
 		 <y-m>0.0</y-m>
 		 <z-m>-0.55172</z-m>
 		 <pitch-deg>-8</pitch-deg>
 	 </offsets>	 
  </model>
   <model>
-	 <path>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.xml</path>
+	 <path>Aircraft/DG1001/Models/instruments/ilec-sc7/ilec-sc7.xml</path>
 	 <offsets>
-		 <x-m>-3.30047</x-m>
-		 <y-m>0</y-m>
-		 <z-m>-0.63607</z-m>
+		 <x-m>-3.29</x-m>
+		 <y-m>0.002</y-m>
+		 <z-m>-0.63</z-m>
 		 <pitch-deg>-8</pitch-deg>
 	 </offsets>	 
  </model>
  
   <model>
-	 <path>Aircraft/ASK13/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
+	 <path>Aircraft/DG1001/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
 	 <offsets>
 		 <x-m>-3.30047</x-m>
 		 <y-m>-0.08651</y-m>
@@ -76,7 +76,7 @@
  </model>
  <!--Rear panel-->
   <model>
-	 <path>Aircraft/ASK13/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
+	 <path>Aircraft/DG1001/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
 	 <offsets>
 		 <x-m>-2.42902</x-m>
 		 <y-m>-0.08647</y-m>
@@ -94,7 +94,7 @@
 	 </offsets>	 
  </model>
   <model>
-	 <path>Aircraft/ASK13/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+	 <path>Aircraft/DG1001/Models/instruments/vario-5stv5/winter-vario-5stv5.xml</path>
 	 <offsets>
 		 <x-m>-2.43642</x-m>
 		 <y-m>-0.03471</y-m>
@@ -114,7 +114,7 @@
  
  <!--
    <model>
-	 <path>Aircraft/ASK13/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
+	 <path>Aircraft/DG1001/Models/instruments/winter-asi-6221/winter-asi-6221.xml</path>
 	 <offsets>
 		 <x-m>1.782</x-m>
 		 <y-m>0.00</y-m>
@@ -146,7 +146,7 @@
  </model>
 
   <model>
-	 <path>Aircraft/ASK13/Models/instruments/wool-thread/wool-thread.xml</path>
+	 <path>Aircraft/DG1001/Models/instruments/wool-thread/wool-thread.xml</path>
 	 <offsets>
 		 <x-m>0.786</x-m>
 		 <y-m> 0</y-m>
@@ -258,6 +258,39 @@
 			<z>0</z>
 		</axis>
  </animation>
+ <!--Gear Compression-->
+ <animation>
+   <type>translate</type>
+   <object-name>gear1</object-name>
+   <object-name>gear2</object-name>
+   <object-name>gear3</object-name>
+   <object-name>gear4</object-name>
+   <object-name>wheel</object-name>
+   <property>gear/gear[1]/compression-m</property>
+   <factor>1</factor>
+    <axis>
+            <x>0.5</x>
+            <y>0</y>
+            <z>1</z>
+    </axis>
+ </animation>
+ <!--Wheel spin-->
+ <animation>
+   <type>spin</type>
+   <object-name>wheel</object-name>
+   <property>gear/gear[1]/rollspeed-ms</property>
+   <factor>50</factor>
+    <center>
+            <x-m>-1.56868</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.33311</z-m>
+    </center>
+    <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+    </axis>
+ </animation>
  
  <!--Gear Doors-->
  <animation>
@@ -352,6 +385,29 @@
     <object-name>fuselage</object-name>
     <object-name>hstab</object-name>
   </effect>-->
+  <animation>
+    <type>material</type>
+     <object-name>door</object-name>
+     <object-name>door.int</object-name>
+    <object-name>body</object-name>
+    <object-name>hstab</object-name>
+    <object-name>elevator</object-name>
+    <object-name>rudder</object-name>
+    <object-name>wings</object-name>
+    <object-name>spoilers</object-name>
+    <object-name>aileronLI</object-name>
+    <object-name>aileronLO</object-name>
+    <object-name>aileronRI</object-name>
+    <object-name>aileronRO</object-name>
+     <object-name>geardoorL</object-name>
+     <object-name>geardoorR</object-name>
+     <object-name>tailfairing</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+
+  </animation>
     
    <animation>
    <type>rotate</type>
