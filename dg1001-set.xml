@@ -12,10 +12,10 @@ copyright 2010 Patrice Poly
 
  <sim>
 
-  <description>DG 1001</description>
-  <author>Patrice Poly</author>
+  <description>DG Flugzeugbau DG1001</description>
+  <author>D-ECHO based on ASK13 by Patrice Poly and ASK21 by Viktor Radnai et.al.</author>
   <status>early-production</status>
-  <aircraft-version>201610</aircraft-version>
+  <aircraft-version>201705</aircraft-version>
   
   
   <flight-model archive="y">yasim</flight-model>
@@ -31,11 +31,34 @@ copyright 2010 Patrice Poly
       <livery>
         <file type="string"></file>
       </livery>
+            <rendering>
+                <reflection-enabled type="int">1</reflection-enabled>
+                <reflection-type type="int">2</reflection-type>
+                <reflection-dynamic type="int">1</reflection-dynamic>
+                <reflection-correction type="float">0.1</reflection-correction>
+                <reflection-fresnel type="float">0.5</reflection-fresnel>
+                <reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
+                <reflection-rainbow type="float">0.1</reflection-rainbow>
+                <reflection-noise type="float">0.05</reflection-noise>
+                <ambient-correction type="float">0.15</ambient-correction>
+            </rendering>
   </model>
 
 		<sound>
-			<path>Aircraft/DG1001/Sounds/ask13-sound.xml</path>
+			<path>Aircraft/DG1001/Sounds/sound.xml</path>
 		</sound>
+        <weight n="0">
+            <name type="string">Pilot</name>
+            <weight-lb>140</weight-lb>
+            <max-lb>230</max-lb>
+            <min-lb>100</min-lb>
+        </weight>
+        <weight n="1">
+            <name type="string">Passenger/Instructor</name>
+            <weight-lb>140</weight-lb>
+            <max-lb>230</max-lb>
+            <min-lb>0</min-lb>
+        </weight>
   
   <help>
    <title>DG 1001G</title>
@@ -96,42 +119,56 @@ When there is somebody with a followme around, you can connect to it by pressing
    <default>
     <menu n="10">
      <label>DG1001</label>
-     <enabled type="bool">true</enabled>     
-     <item>
-       <label>Aerotow Settings</label>
-       <binding>
-     	 <command>nasal</command>
-     	 <script>dg1001.aerotow_dialog.open()</script>
-       </binding>
-     </item>    
-     <item>
-       <label>Winch Settings</label>
-       <binding>
-     	 <command>nasal</command>
-     	 <script>dg1001.winch_dialog.open()</script>
-       </binding>
-     </item>     
-     <item>
-       <label>Toggle ground handling</label>
-       <binding>
-     	 <command>property-toggle</command>
-         <property>/controls/ground-handling</property>
-       </binding>
-     </item>    
-     <item>
-       <label>Toggle assiting gears</label>
-       <binding>
-     	 <command>property-toggle</command>
-         <property>/controls/gear/assist-1</property>
-       </binding>
-     </item> 
-    <item>
-    <label>Select Livery</label>
-    <binding>
-        <command>nasal</command>
-        <script>aircraft.livery.dialog.open()</script>
-    </binding>
-    </item>
+     <enabled type="bool">true</enabled> 
+                    <item>
+                        <label>Aerotow Settings</label>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>aerotow_dialog</dialog-name>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Winch Settings</label>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>winch_dialog</dialog-name>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Rope Breakage</label>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>breakage</dialog-name>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Simulation Options</label>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>options_dialog</dialog-name>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Ground services</label>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>groundservice_dialog</dialog-name>
+                        </binding>
+                    </item>
+                    <item>
+                    <label>Select Livery</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>aircraft.livery.dialog.open()</script>
+                    </binding>
+                    </item>
+                    <item>
+                    <label>Select Immatriculation</label>
+                    <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>Immatriculation</dialog-name>
+                    </binding>
+                    </item>
     </menu>
    </default>
   </menubar>
@@ -381,11 +418,21 @@ When there is somebody with a followme around, you can connect to it by pressing
 		  <elevator-trim>0.2195</elevator-trim> <!-- controllable -->
                   <spoilers alias="/controls/flight/elevator-trim"/> <!-- spoilers is transmitted via mp (elevator-trim is NOT) -->
 		</flight>
-		<engines>
-		  <engine>
-		    <throttle>1.0</throttle>
-		  </engine>
-		</engines>
+                <engines>
+                    <engine>
+                        <throttle>1.0</throttle>
+                    </engine>
+                </engines>
+                <flight>
+                    <rudder2 type="double">0</rudder2>
+                </flight>
+                <gear>
+                    <assist-1 type="bool">false</assist-1>
+                </gear>
+                <breakage>
+                    <enabled type="bool">0</enabled><!--Rope Breakage by default disabled-->
+                    <altitude-m type="double">50</altitude-m>
+                </breakage>
 		<winch>
 			<place type="bool">false</place>
 		</winch>
@@ -396,105 +443,182 @@ When there is somebody with a followme around, you can connect to it by pressing
 
 	<input>
 		<keyboard>
-        <key n="127">
-            <name>Delete</name>
-            <desc>Toggle Reversers</desc>
-            <binding>
-                <condition>
-                    <equals>
-                        <property>controls/engines/engine[0]/throttle</property>
-                        <value>0</value>
-                    </equals>
-                </condition>
-                <command>property-toggle</command>
-                <property>controls/engines/engine[0]/reverser</property>
-            </binding>
-        </key>
-                      <!--
-			<key n="23">
-			<name>Ctrl-w</name>
-			<desc>Place Winch 1000m in front of aircraft</desc>
-			<binding>
-				<command>property-assign</command>
-				<property>/controls/winch/place</property>
-				<value type="bool">true</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>/controls/winch/place</property>
-					<value type="bool">false</value>
-				</binding>
-			</mod-up>
-			</key>
-                       -->
-			<key n="23">
-			  <name>Ctrl-w</name>
-			  <desc>Place Winch and hook in</desc>
-			  <binding>
-			    <command>nasal</command>
-			    <script>towing.setWinchPositionAuto()</script>
-			  </binding>
-			</key>
-			<key n="87">
-				<name>W</name>
-				<desc>Toggle winch hook</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-						var p = "/sim/hitches/winch/open";
-						setprop(p, !getprop(p));
-					</script>
-				</binding>
-			</key>
-			<key n="119">
-				<name>w</name>
-				<desc>Increase winch speed</desc>
-				<binding>
-					<command>nasal</command>
-					<script>interpolate("/sim/hitches/winch/winch/rel-speed", 1.0, 2)</script>
-				</binding>
-				<mod-up>
-					<binding>
-						<command>nasal</command>
-						<script>interpolate("/sim/hitches/winch/winch/rel-speed", 0.0, 2)</script>
-					</binding>
-				</mod-up>
-			</key>
-			<key n="15">
-				<name>Ctrl-o</name>
-				<desc>Find aircraft for aerotow</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>/controls/aerotow/find-aircraft</property>
-					<value type="bool">true</value>
-				</binding>
-				<mod-up>
-					<binding>
-						<command>property-assign</command>
-						<property>/controls/aerotow/find-aircraft</property>
-						<value type="bool">false</value>
-					</binding>
-				</mod-up>
-			</key>
-			<key n="111">
-				<name>o</name>
-				<desc>Lock aerotow hook</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>/sim/hitches/aerotow/open</property>
-					<value type="bool">false</value>
-				</binding>
-			</key>
-			<key n="79">
-				<name>O</name>
-				<desc>Open aerotow hook</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>/sim/hitches/aerotow/open</property>
-					<value type="bool">true</value>
-				</binding>
-			</key>
+            <key n="127">
+                <name>Delete</name>
+                <desc>Toggle Reversers</desc>
+                <binding>
+                    <condition>
+                        <equals>
+                            <property>controls/engines/engine[0]/throttle</property>
+                            <value>0</value>
+                        </equals>
+                    </condition>
+                    <command>property-toggle</command>
+                    <property>controls/engines/engine[0]/reverser</property>
+                </binding>
+            </key>
+            <key n="68">
+                <name>D</name>
+                <desc>Toggle Both Windows</desc>
+                <binding>
+                    <condition>
+                        <less-than>
+                            <property>sim/model/door-positions/frontwin/position-norm</property>
+                            <value>0.5</value>
+                        </less-than>
+                    </condition>
+                    <command>property-interpolate</command>
+                    <property>sim/model/door-positions/frontwin/position-norm</property>
+                    <value type="double">1.0</value>
+                    <rate>0.5</rate>
+                </binding>
+                <binding>
+                    <condition>
+                        <greater-than-equals>
+                            <property>sim/model/door-positions/frontwin/position-norm</property> 
+                            <value>0.5</value>
+                        </greater-than-equals>
+                    </condition>
+                    <command>property-interpolate</command>
+                    <property>sim/model/door-positions/frontwin/position-norm</property>
+                    <value type="double">0.0</value>
+                    <rate>0.5</rate>
+                </binding>
+                <binding>
+                    <!-- using frontwin in the conditional for readwin in order to synchronize both windows positions -->
+                    <condition>
+                        <less-than>
+                            <property>sim/model/door-positions/frontwin/position-norm</property>
+                            <value>0.5</value>
+                        </less-than>
+                    </condition>
+                    <command>property-interpolate</command>
+                    <property>sim/model/door-positions/rearwin/position-norm</property>
+                    <value type="double">1.0</value>
+                    <rate>0.5</rate>
+                </binding>
+                <binding>
+                    <condition>
+                        <greater-than-equals>
+                            <property>sim/model/door-positions/frontwin/position-norm</property>
+                            <value>0.5</value>
+                        </greater-than-equals>
+                    </condition>
+                    <command>property-interpolate</command>
+                    <property>sim/model/door-positions/rearwin/position-norm</property>
+                    <value type="double">0.0</value>
+                    <rate>0.5</rate>
+                </binding>
+            </key>
+            <key n="23">
+                <name>Ctrl-w</name>
+                <desc>Place winch in front of aircraft</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>towing.setWinchPositionAuto()</script>
+                </binding>
+            </key>
+            <key n="87">
+                <name>W</name>
+                <desc>Increase winch speed</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        throttle = getprop("/sim/hitches/winch/winch/rel-speed") + 0.05;
+                        if (throttle > 1) throttle = 1;
+                        setprop("/sim/hitches/winch/winch/rel-speed", throttle);
+                        speed = throttle * getprop("/sim/hitches/winch/winch/max-speed-m-s");
+                        force = getprop("/sim/hitches/winch/force");
+                        gui.popupTip(sprintf("Winch throttle %d%%, speed %0.2f m/s, force %0.2f", throttle * 100, speed, force));
+                    </script>
+                </binding>
+            </key>
+            <key n="119">
+                <name>w</name>
+                <desc>Decrease winch speed</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        throttle = getprop("/sim/hitches/winch/winch/rel-speed") - 0.05;
+                        if (0 > throttle) throttle = 0;
+                        setprop("/sim/hitches/winch/winch/rel-speed", throttle);
+                        speed = throttle * getprop("/sim/hitches/winch/winch/max-speed-m-s");
+                        force = getprop("/sim/hitches/winch/force");
+                        gui.popupTip(sprintf("Winch throttle %d%%, speed %0.2f m/s, force %0.2f", throttle * 100, speed, force));
+                    </script>
+                </binding>
+            </key>
+            <key n="15">
+                <name>Ctrl-o</name>
+                <desc>Find aircraft for aerotow</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/aerotow/find-aircraft</property>
+                    <value type="bool">true</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/aerotow/find-aircraft</property>
+                        <value type="bool">false</value>
+                    </binding>
+                </mod-up>
+            </key>
+            <key n="111">
+                <name>o</name>
+                <desc>Open hook</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/hitches/hook-open</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/hitches/aerotow/open</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/hitches/winch/open</property>
+                    <value type="bool">true</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/sim/hitches/hook-open</property>
+                        <value type="bool">false</value>
+                    </binding>
+                </mod-up>
+
+            </key>
+            <key n="83">
+                <name>S</name>
+                <desc>Vario volume up</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/ilec-sc7/volume</property>
+                    <step>0.1</step>
+                    <max>1</max>
+                </binding>
+            </key>
+            <key n="115">
+                <name>s</name>
+                <desc>Vario volume down</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/ilec-sc7/volume</property>
+                    <step>-0.1</step>
+                    <min>0</min>
+                </binding>
+            </key>
+            <key n="19">
+                <name>Ctrl-s</name>
+                <desc>Start/stop smoke</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/smoke</property>
+                </binding>
+            </key>
 		</keyboard>
 	</input>
 
@@ -504,8 +628,8 @@ When there is somebody with a followme around, you can connect to it by pressing
 			<file>Aircraft/DG1001/Nasal/wool-thread.nas</file>
 			<file>Aircraft/DG1001/Nasal/AR3201.nas</file>
 			<file>Aircraft/DG1001/Nasal/immat.nas</file>
-			<file>Aircraft/DG1001/Nasal/dialogs.nas</file>
-			<file>Aircraft/DG1001/Nasal/systems.nas</file>
+			<file>Aircraft/DG1001/Nasal/groundhandling.nas</file>
+			<file>Aircraft/DG1001/Nasal/door.nas</file>
 			<file>Aircraft/DG1001/Nasal/liveries.nas</file>
 		</DG1001>
 	</nasal>

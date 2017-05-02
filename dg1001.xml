@@ -4,10 +4,15 @@
 
 <!-- Approach configuration -->
 <approach speed="40" aoa="5.2" glide-angle="1.7">
+		<solve-weight idx="0" weight="145.0" />
+		<solve-weight idx="1" weight="145.0" />
 </approach>
 
 <!-- Cruise configuration -->
 <cruise speed="64" alt="5000" glide-angle="1.4">
+		<solve-weight idx="0" weight="145.0" />
+		<solve-weight idx="1" weight="145.0" />
+    
 </cruise>
 
 <!-- pilot's eyepoint -->
@@ -94,11 +99,12 @@
   <control-output control="EXTEND" prop="/gear/gear[6]/position-norm"/>
 </gear>
 
-<!-- pilots -->
-
-<ballast x="2.90049" y="0" z="-0.62443" mass="145"/>
-<ballast x="1.9242" y="0" z="-0.62026" mass="145"/>
-
+    <!-- pilots -->
+    <!-- Front -->
+    <weight x="2.90049" y="0" z="-0.62443" mass-prop="/sim/weight[0]/weight-lb" solve-weight="1" idx="0"/>
+    <!--Rear-->
+    <weight x="1.9242" y="0" z="-0.62026" mass-prop="/sim/weight[1]/weight-lb" solve-weight="1" idx="1"/>
+ 
 <!--Pushing/pulling the aircraft around:-->
 <!--TURN, this is done by tearing the wings around-->
   <thruster x="1.5"  y="10" z="0.1" vx="1" vy="-1" vz="0" thrust="100">
@@ -108,11 +114,11 @@
   <control-input axis="/controls/flight/rudder2" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
   </thruster>
   <!--Push/pull forward-->
-  <thruster x="1.53551" y="0" z="-1.51963" vx="1" vy="0" vz="0" thrust="200">
+  <thruster x="1.53551" y="0" z="-1.51963" vx="1" vy="0" vz="0" thrust="300">
   <control-input axis="/controls/throttle-2" control="THROTTLE"/>
   </thruster>
   <!--Push/pull backward-->
-  <thruster x="1.53551" y="0" z="-1.51963" vx="-1" vy="0" vz="0" thrust="200">
+  <thruster x="1.53551" y="0" z="-1.51963" vx="-1" vy="0" vz="0" thrust="300">
       <control-input axis="/controls/throttle-reverse" control="THROTTLE"/>
   </thruster>
   <!--Hold the aircraft levelled (for takeoff-->
